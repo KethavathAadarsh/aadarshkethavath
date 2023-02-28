@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+	<style>
+		/* Tab content */
+		.tabcontent {
+			display: none;
+			padding: 15px 20px;
+			border: 1px solid #ccc;
+			border-top: none;
+		}
+		/* Active tab */
+		.tabcontent.active {
+			display: block;
+		}
+		/* Tab button */
+		.tablink {
+			background-color: #f2f2f2;
+			border: none;
+			color: black;
+			padding: 10px;
+			font-size: 18px;
+			cursor: pointer;
+		}
+		/* Active tab button */
+		.tablink.active {
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<!-- Image -->
+	<img src="https://www.example.com/myimage.jpg" alt="My Image">
+
+	<!-- Introduction -->
+	<h1>Welcome to My Website</h1>
+	<p>This is a brief introduction about myself and what my website is all about.</p>
+
+	<!-- Tabs -->
+	<button class="tablink active" onclick="openTab('Tab1')">Tab 1</button>
+	<button class="tablink" onclick="openTab('Tab2')">Tab 2</button>
+	<button class="tablink" onclick="openTab('Tab3')">Tab 3</button>
+
+	<!-- Tab content -->
+	<div id="Tab1" class="tabcontent active">
+		<h2>Tab 1</h2>
+		<p>This is the content for Tab 1.</p>
+	</div>
+
+	<div id="Tab2" class="tabcontent">
+		<h2>Tab 2</h2>
+		<p>This is the content for Tab 2.</p>
+	</div>
+
+	<div id="Tab3" class="tabcontent">
+		<h2>Tab 3</h2>
+		<p>This is the content for Tab 3.</p>
+	</div>
+
+	<script>
+		// Open the default tab on page load
+		document.getElementById('Tab1').style.display = 'block';
+
+		// Function to open a tab
+		function openTab(tabName) {
+			// Get all tab content elements
+			var tabcontent = document.getElementsByClassName('tabcontent');
+			// Get all tab button elements
+			var tablink = document.getElementsByClassName('tablink');
+			// Loop through all tab content elements
+			for (var i = 0; i < tabcontent.length; i++) {
+				// Hide all tab content elements
+				tabcontent[i].style.display = 'none';
+			}
+			// Loop through all tab button elements
+			for (var i = 0; i < tablink.length; i++) {
+				// Remove the 'active' class from all tab button elements
+				tablink[i].className = tablink[i].className.replace(' active', '');
+			}
+			// Show the selected tab content element
+			document.getElementById(tabName).style.display = '
